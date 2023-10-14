@@ -1,9 +1,10 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface CardProps {
   name: string;
-  img: string;
   contactNumber: string;
   github: string;
   linkedIn: string;
@@ -11,15 +12,19 @@ interface CardProps {
   job: string;
 }
 
-const Card = ({
-  name,
-  img,
-  job,
-  contactNumber,
-  github,
-  linkedIn,
-  website,
-}: CardProps) => {
+const Card = ({ name, job, github, linkedIn, website }: CardProps) => {
+  const [image, setImage] = useState("");
+  useEffect(() => {
+    const fetchData = async () => {
+      await fetch(`https://api.github.com/users/${github}`).then((g) => {
+        console.log(g);
+        g.json().then((ga) => {
+          setImage(ga?.avatar_url);
+        });
+      });
+    };
+    fetchData();
+  }, []);
   return (
     <>
       <div className="flex flex-col justify-center items-center h-full w-full md:w-[200px] md:h-[400px]">
@@ -33,7 +38,7 @@ const Card = ({
             <div className="absolute -bottom-12 flex h-[98px] w-[98px] items-center justify-center rounded-full border-[4px] border-white bg-pink-400 dark:!border-navy-700">
               <img
                 className="h-full w-full rounded-full"
-                src={img}
+                src={image}
                 alt="profile"
               />
             </div>
