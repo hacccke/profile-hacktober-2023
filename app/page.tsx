@@ -16,7 +16,7 @@ export default function Home() {
         </div>
       </nav>
       <div className="grid grid-cols-1 md:grid-cols-3">
-        {profile.map((p) => {
+        {profile.map((p, index) => {
           const { name, contactNumber, github, linkedIn, website, job } = p;
           fetch(`https://api.github.com/users/${github}`).then((g) => {
             g.json().then((ga) => {
@@ -25,6 +25,7 @@ export default function Home() {
           });
           return (
             <Card
+              key={`profile_${index}`}
               job={job}
               name={name}
               img={image}
