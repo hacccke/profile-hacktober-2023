@@ -5,7 +5,6 @@ import profile from "@/data/profile.json";
 import { useState } from "react";
 
 export default function Home() {
-  const [image, setImage] = useState("");
   return (
     <main className="">
       <nav className="flex items-center justify-center bg-[#0F0913] w-full">
@@ -17,6 +16,7 @@ export default function Home() {
       </nav>
       <div className="grid grid-cols-1 md:grid-cols-3">
         {profile.map((p, index) => {
+          const [image, setImage] = useState("");
           const { name, contactNumber, github, linkedIn, website, job } = p;
           fetch(`https://api.github.com/users/${github}`).then((g) => {
             g.json().then((ga) => {
