@@ -11,7 +11,7 @@ export default function Home() {
       <nav className="flex items-center justify-center bg-[#0F0913] w-full">
         <div className="py-6 mx-auto">
           <p className="text-2xl font-bold text-[#D2B863] mx-auto">
-            HACTOBERFEST 2023
+            HACKTOBERFEST 2023
           </p>
         </div>
       </nav>
