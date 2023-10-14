@@ -1,8 +1,5 @@
-"use client";
 import Card from "@/components/Card";
-
 import profile from "@/data/profile.json";
-import { useState } from "react";
 
 export default function Home() {
   return (
@@ -16,21 +13,14 @@ export default function Home() {
       </nav>
       <div className="grid grid-cols-1 md:grid-cols-3">
         {profile.map((p, index) => {
-          const [image, setImage] = useState("");
           const { name, contactNumber, github, linkedIn, website, job } = p;
-          fetch(`https://api.github.com/users/${github}`).then((g) => {
-            g.json().then((ga) => {
-              setImage(ga?.avatar_url);
-            });
-          });
           return (
             <Card
               key={`profile_${index}`}
               job={job}
               name={name}
-              img={image}
               contactNumber={contactNumber}
-              github={`https://github.com/${github}`}
+              github={github}
               linkedIn={linkedIn}
               website={website}
             />
