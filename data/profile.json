@@ -21,5 +21,27 @@
     "github": "Tsandesh",
     "linkedIn": "https://www.linkedin.com/in/sandesh-thapa-779482259/",
     "website": "https://www.google.com"
+  },
+   {
+    "name": "Abishan Chemjong",
+    "job": "Backend Engineer",
+    "contactNumber": "9817100019",
+    "github": "IamAbishan1",
+    "linkedIn": "https://www.linkedin.com/in/abishan-chemjong-621b66220/"},
+    {
+    "name": "Suraj Gautam",
+    "job": "Software Engineer",
+    "contactNumber": "9869286076",
+    "github": "Suraj0910",
+    "linkedIn": "https://www.linkedin.com/in/suraj-gautam-277372278/",
+    "website": "https://www.twitter.com/"
+    },
+   {
+    "name": "Rita Adhikari",
+    "job": "QA Engineer",
+    "contactNumber": "9844911118",
+    "github": "ritaadhikari",
+    "linkedIn": "https://www.linkedin.com/in/rita-adhikari-b98770289/",
+    "website": "#"
   }
 ]
