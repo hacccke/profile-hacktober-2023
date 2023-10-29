@@ -52,21 +52,21 @@ const Card = ({ name, job, github, linkedIn, website }: CardProps) => {
           <div className="mt-6 mb-3 flex gap-14 md:!gap-14">
             <Link
               className="flex flex-col items-center justify-center h-12 w-12 hover:opacity-80"
-              href={linkedIn}
+               href={linkedIn || ''}
               target="_blank"
             >
               <img src="/linkedin.png" alt="icon-linkedin" />
             </Link>
             <Link
               className="flex flex-col items-center justify-center h-12 w-12 hover:opacity-80"
-              href={github}
+              href={github || ''}
               target="_blank"
             >
               <img src="/github.png" alt="icon-github" />
             </Link>
             <Link
               className="flex flex-col items-center justify-center h-12 w-12 hover:opacity-80"
-              href={website}
+              href={website || ''}
               target="_blank"
             >
               <img src="/website.png" alt="icon-profile" />
